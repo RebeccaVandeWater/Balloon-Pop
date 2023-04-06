@@ -53,6 +53,7 @@ function inflate(){
     width = 0
     }
     draw()
+    draw()
 }
 
 function draw(){
