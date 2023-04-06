@@ -43,17 +43,27 @@ function inflate(){
     clickCount ++
     height += inflationRate
     width += inflationRate
-    
-    if(height >= maxSize){
-    console.log("Pop the balloon!")
-    let balloonElement = document.getElementById("balloon")
-    balloonElement.classList.add("green")
-    currentPopCount ++
-    height = 0
-    width = 0
+    checkBalloonPop()
+    draw()
     }
-    draw()
-    draw()
+
+function checkBalloonPop(){
+    if(height >= maxSize){
+        console.log("Pop the balloon!")
+        let balloonElement = document.getElementById("balloon")
+        balloonElement.classList.remove(currentColor)
+        getRandomColor()
+        balloonElement.classList.add(currentColor)
+        currentPopCount ++
+        height = 0
+        width = 0
+    }
+}
+
+function getRandomColor(){
+    let i= Math.floor(Math.random() * possibleColors.length);    
+    //math.floor pulls only the very first number pulled in math.random, which pulls a number between 0 and 1. Math.round will round up to the nearest number.
+    currentColor = possibleColors[i]
 }
 
 function draw(){
