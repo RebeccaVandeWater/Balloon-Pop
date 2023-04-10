@@ -23,7 +23,7 @@
 
     <main class="card container">
 
-        <form class="d-flex space-between hidden" id="player-form" onsubmit="setPlayer(event)">
+        <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
             <div>
                 <label for="name">
                     <span class="material-symbols-outlined">account_circle</span>
@@ -34,14 +34,14 @@
             <button type="submit">Ok</button>
         </form>
         
-        <!-- TODO replace hidden class -->
+        
 
-        <section id = "game" class = "game">
+        <section id = "game" class = "game hidden">
 
             <div class="card bg-dark text-light">
                 <div class = "d-flex space-between"> 
                     <div>
-                        <i class="material-symbols-outlined">account_circle</i>
+                        <i class ="material-symbols-outlined" account_circle></i>
                         <span id="player-name"></span>
                     </div>  
                     <div>
@@ -51,14 +51,12 @@
                 </div>
             </div>
 
-            <div id="main-controls" class="d-flex space-around mt-2 hidden">
+            <div id="main-controls" class="d-flex space-around mt-2">
                 <button class="btn-dark" onclick = "changePlayer()">Change Player</button>
                 <button id="start-button" onclick="startGame()">START GAME</button>
             </div>
             
-                    <!-- TODO replace hidden class -->
-
-            <div id="game-controls">
+            <div id="game-controls" class="hidden">
                 
                 <div>
                     <span>Balloons Popped:</span>
@@ -78,12 +76,21 @@
                     </div>
                 </div>
                 <div id="balloon" class="balloon"></div>
+                <audio id="pop-sound" src="burst.mp3"></audio>
             </div>
                 
             </div>
             </section>
             
     </main>
+
+        <div id="scoreboard" class="container card mt-2">
+            <h3 class="text-center">Scoreboard</h3>
+            <div id="players"></div>
+            
+            </div>
+            
+        </div>
 
     <script src="main.js"></script>
 </body>
